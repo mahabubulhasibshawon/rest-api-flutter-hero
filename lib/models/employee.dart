@@ -9,7 +9,7 @@ class Employee{
 
   Employee.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    email = json['eamil'];
+    email = json['email'];
     firstName = json['first_name'];
     lastName = json['last_name'];
     avatar = json['avatar'];

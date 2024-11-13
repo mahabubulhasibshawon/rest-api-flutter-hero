@@ -23,7 +23,10 @@ class _PostScreenState extends State<PostScreen> {
 
   getData() async {
     posts = await PostService().getPosts();
-    posts != null ? isLoaded = true : false;
+    // posts != null ? isLoaded = true : false;
+    if (posts != null) {
+      isLoaded = true;
+    }
   }
 
   @override
@@ -34,13 +37,16 @@ class _PostScreenState extends State<PostScreen> {
       ),
       body: Visibility(
         visible: isLoaded,
-        child: ListView.builder(itemCount: posts?.length,
-            itemBuilder: (context, index){
-          return Container(
-            child: Text(posts![index].title),
-          );
-        }),
-        replacement: Center(child: CircularProgressIndicator(),),
+        child: ListView.builder(
+            itemCount: posts?.length,
+            itemBuilder: (context, index) {
+              return Container(
+                child: Text('hi'),
+              );
+            }),
+        replacement: Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
   }

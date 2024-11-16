@@ -20,10 +20,15 @@ class _WormholeScreenState extends State<WormholeScreen> {
 
     if(response.statusCode == 200){
       print('success');
-      print(response.body);
+      // print(response.body);
 
       final jsonData = jsonDecode(response.body);
-      print(jsonData);
+      // print(jsonData);
+      posts = jsonData;
+      print(posts.length);
+    }
+    else{
+      print("failed");
     }
   }
 
@@ -35,6 +40,14 @@ class _WormholeScreenState extends State<WormholeScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: ListView.builder(
+          itemCount: posts.length,
+          itemBuilder: (_,index){
+        return ListTile(
+          title: Text(posts[index]['title'].toString()),
+        );
+      }),
+    );
   }
 }

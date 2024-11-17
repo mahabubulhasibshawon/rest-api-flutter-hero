@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rest_api_flutter_hero/screens/employee_screen.dart';
 import 'package:rest_api_flutter_hero/screens/post_screen.dart';
-import 'package:rest_api_flutter_hero/services/wormhole_screen.dart';
+import 'package:rest_api_flutter_hero/screens/wormhole_screen.dart';
 
 void main() {
   runApp(const MyApp());
